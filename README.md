@@ -28,6 +28,11 @@
 
 Project should start at : http://localhost:4200/
 
+## Run tests
+
+Go to `api` or `client` folder and run :
+`npm test`
+
 ## Access to project
 
 The project is also available at : https://tennis-project.netlify.app/
