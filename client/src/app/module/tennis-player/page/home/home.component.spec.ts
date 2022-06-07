@@ -12,7 +12,7 @@ import { HomeComponent } from './home.component';
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  let tennisPlayerService: jasmine.SpyObj<TennisPlayerService> = jasmine.createSpyObj('TennisPlayerService', ['getListPlayers']);
+  let tennisPlayerService: jasmine.SpyObj<TennisPlayerService> = jasmine.createSpyObj('TennisPlayerService', ['getListPlayers', 'getStats']);
 
 
   let playersFixture = [
@@ -24,6 +24,15 @@ describe('HomeComponent', () => {
     status: 200,
     body: playersFixture
   };
+
+  let mockStats = {
+    status: 200,
+    body: {
+      countryHighestWinrate: 'USA',
+      averageIMC: 20,
+      medianHeight: 1.75
+    }
+  }
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -47,6 +56,7 @@ describe('HomeComponent', () => {
     fixture = TestBed.createComponent(HomeComponent);
     tennisPlayerService = TestBed.inject(TennisPlayerService) as jasmine.SpyObj<TennisPlayerService>
     tennisPlayerService.getListPlayers.and.returnValue(of(mockRes));
+    tennisPlayerService.getStats.and.returnValue(of(mockStats));
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
