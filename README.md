@@ -26,7 +26,7 @@
 `npm install`
 `npm start`
 
-Project should start at : http://localhost:8858/
+Project should start at : http://localhost:4200/
 
 ## Access to project
 
