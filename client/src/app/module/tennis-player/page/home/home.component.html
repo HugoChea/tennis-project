@@ -1,0 +1,48 @@
+<div fxFlex="50" fxFlex.lt-md="100" fxLayout='row' fxLayoutAlign="center start" class="main">
+    <div fxLayout='column' fxLayoutAlign="space-evenly center" class="column-list">
+        <div fxFlexFill>
+            <mat-form-field fxFlexFill class="example-form-field" appearance="fill">
+                <mat-label>Rechercher un joueur</mat-label>
+                <input fxFlex="10" matInput type="text" (input)="search()" [(ngModel)]="inputSearch">
+              </mat-form-field>
+        </div>
+        <div fxFlexFill>
+            <mat-card *ngFor="let player of tennisPlayerListDisplayed" class="tennis-card" (click)="toDetails(player.id)">
+                <div fxLayout='row' fxLayoutAlign="center start">
+                    <div fxFlex="33.3" >
+                        <div class="img-container">
+                            <img class="img" alt="player" [src]="player.picture" >
+                        </div>
+                    </div>
+                    <div fxFlex="66.6" fxLayout='column' fxLayoutAlign="center start" class="infos">  
+                        <div fxFlex="50" fxLayoutAlign="center center">
+                            <h3 class="title-card">{{ player.firstname }} {{ player.lastname }}</h3>
+                        </div>
+                        <div fxFlex="50" fxFlexFill>
+                            <div fxFlex="33.3">
+                                <h4 class="subtitle-card">RANK</h4>
+                                <p class="text-card">{{ player.data.rank }}</p>
+                            </div>
+                            <div fxFlex="33.3">
+                                <h4 class="subtitle-card">POINTS</h4>
+                                <p class="text-card">{{ player.data.points }}</p>
+                            </div>
+                            <div fxFlex="33.3">
+                                <h4 class="subtitle-card">COUNTRY</h4>
+                                <p class="text-card">{{ player.country.code }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div fxFlex="50" fxFlex.lt-md="100" fxLayout='row' fxLayoutAlign="center center">
+    <mat-card class="stats-card text-card">
+        <p>IMC moyen: {{ globalStats.averageIMC }}</p>
+        <p>Winrate: {{ globalStats.countryHighestWinrate }}</p>
+        <p>Taille médiane: {{ globalStats.medianHeight }}</p>
+    </mat-card>
+</div>
+

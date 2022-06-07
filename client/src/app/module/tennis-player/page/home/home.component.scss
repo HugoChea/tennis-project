@@ -1,0 +1,51 @@
+.main {
+  min-height: 100vh;
+}
+
+.column-list {
+  width: 100%;
+  margin: 10vh 10vw;
+}
+
+.tennis-card {
+  margin: 1em 0;
+}
+
+.tennis-card:hover {
+  cursor: pointer;
+}
+
+.mat-card {
+  padding: 0 !important;
+}
+
+.img-container {
+  overflow: hidden;
+  height: 150px;
+  max-height: 300px;
+  position: relative;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 33%;
+  transform: scale(1.5);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -moz-transform: scale(1.5); /* Firefox */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+}
+
+.infos {
+  width: 100%;
+  height: 150px;
+  font-family: "Mulish Semibold";
+}
+
+.stats-card{
+  width : 200px;
+  padding: 2em!important;
+}
